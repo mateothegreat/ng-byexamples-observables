@@ -22,7 +22,6 @@ export class ComponentsSharingComponent {
 
         console.log(componentsSharingService.stream$.observers);
 
-
     }
 
 }
