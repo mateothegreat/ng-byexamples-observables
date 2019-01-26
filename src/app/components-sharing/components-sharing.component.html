@@ -1,0 +1,61 @@
+<div class="wrapper">
+
+    <div class="components">
+
+        <app-components-sharing-a class="component"></app-components-sharing-a>
+        <app-components-sharing-b class="component"></app-components-sharing-b>
+
+    </div>
+
+    <div class="outputs">
+
+        <div class="events">
+
+            <div *ngFor="let event of events">
+
+                {{ event }}
+
+            </div>
+
+        </div>
+
+        <div class="listeners">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Subscriber #</th>
+                    <th>Send</th>
+
+                </tr>
+
+                </thead>
+                <tr *ngFor="let observer of componentsSharingService.stream$.observers; let i = index">
+
+                    <td>{{ i }}</td>
+
+                    <td>
+
+                        <button mat-raised-button
+                                (click)="observer.next('sent directly to subscriber')">
+
+                            Send
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+</div>
